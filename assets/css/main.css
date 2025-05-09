@@ -3611,7 +3611,7 @@ body.is-menu-visible #menu .inner {
 		padding: 7em 0 8.25em 0;
 		background-color: #2e3141;
 		background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-			url("../../images/banner.jpeg");
+			url("../../images/bg-white.jpg");
 		background-size: cover;
 		background-position: center;
 		margin-bottom: -6.5em;
@@ -3721,7 +3721,7 @@ body.is-preload #banner p {
 	#wrapper>header {
 		padding: 9em 0 6.25em 0;
 		background-color: #2e3141;
-		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
+		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg-white.jpg");
 		background-size: auto,
 			cover;
 		background-position: center,
