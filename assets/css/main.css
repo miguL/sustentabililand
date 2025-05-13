@@ -4312,3 +4312,18 @@ body.is-preload #banner p {
 	}
 
 }
+
+#googlemap .inner {
+  position: relative;
+  z-index: 2;
+}
+
+#googlemap #mapa2 {
+  position: relative;
+  z-index: 3;
+}
+
+#googlemap::before,
+#googlemap::after {
+  display: none !important;
+}
