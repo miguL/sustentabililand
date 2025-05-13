@@ -38,7 +38,7 @@
 					<li><a href="generic.html">Generic</a></li>
 					<li><a href="elements.html">Elements</a></li>
 					<li><a href="#">Log In</a></li>
-					<li><a href="#">V1.1</a></li>
+					<li><a href="#">V1.2</a></li>
 				</ul>
 				<a href="#" class="close">Close</a>
 			</div>
@@ -172,7 +172,6 @@
 					para climatizar o seu espaço.</p>
 				<form method="post" action="https://formsubmit.co/miguel.francisco.bernardo@gmail.com">
 					<!--668bbea69e34f865a5676f5369460dc0-->
-					<input type="hidden" name="_next" value="">
 					<input type="hidden" name="_captcha" value="false">
 					<div class="fields">
 						<div class="field">
@@ -296,6 +295,13 @@
 			document.getElementById("formulario").addEventListener("submit", function (event) {
 				event.preventDefault(); // Impede redirecionamento
 				const form = event.target;
+
+			    // Adiciona o campo _next com o URL atual da página
+				const inputNext = document.createElement("input");
+				inputNext.type = "hidden";
+				inputNext.name = "_next";
+				inputNext.value = window.location.href; // Redireciona para a mesma página
+				form.appendChild(inputNext);
 
 				fetch(form.action, {
 					method: "POST",
