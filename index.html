@@ -191,31 +191,6 @@
 						<li><input type="submit" value="Enviar Mensagem" /></li>
 					</ul>
 				</form>
-				<!-- Popup de sucesso (inicialmente escondido) -->
-				<div id="popup" style="
-			display: none;
-			position: fixed;
-			top: 50%; left: 50%;
-			transform: translate(-50%, -50%);
-			background: white;
-			padding: 2em;
-			box-shadow: 0 0 20px rgba(0,0,0,0.2);
-			border-radius: 8px;
-			text-align: center;
-			z-index: 9999;
-			">
-					<h2>Mensagem enviada!</h2>
-					<p>Recebemos a sua mensagem.</p>
-					<button onclick="fecharPopup()" style="
-				margin-top: 1em;
-				background: #4CAF50;
-				color: white;
-				padding: 0.5em 1em;
-				border: none;
-				border-radius: 4px;
-				cursor: pointer;
-			">Fechar</button>
-				</div>
 				<ul class="contact">
 					<li class="icon solid fa-home">
 						Sustentabililand, Lda<br />
@@ -291,37 +266,55 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+
+		<!-- Modal de Sucesso -->
+		<div id="modalSucesso" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+  background-color: rgba(0, 0, 0, 0.6); z-index: 1000; justify-content: center; align-items: center;">
+
+			<div
+				style="background: white; padding: 2em; border-radius: 8px; max-width: 400px; text-align: center; position: relative;">
+				<button id="fecharModal"
+					style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 20px; cursor: pointer;">&times;</button>
+				<h3>Mensagem enviada!</h3>
+				<p>Obrigado pelo seu contacto. Responderemos em breve.</p>
+			</div>
+
+		</div>
 		<script>
-			document.getElementById("formulario").addEventListener("submit", function (event) {
-				event.preventDefault(); // Impede redirecionamento
-				const form = event.target;
+			document.getElementById("meuFormulario").addEventListener("submit", function (e) {
+				e.preventDefault(); // Impede o envio tradicional
 
-			    // Adiciona o campo _next com o URL atual da página
-				const inputNext = document.createElement("input");
-				inputNext.type = "hidden";
-				inputNext.name = "_next";
-				inputNext.value = window.location.href; // Redireciona para a mesma página
-				form.appendChild(inputNext);
+				const form = e.target;
+				const formData = new FormData(form);
 
-				fetch(form.action, {
+				fetch("https://formsubmit.co/miguel.francisco.bernardo@gmail.com", {
 					method: "POST",
-					body: new FormData(form),
+					body: formData,
+					headers: {
+						'Accept': 'application/json'
+					}
 				})
 					.then(response => {
 						if (response.ok) {
-							document.getElementById("popup").style.display = "block";
+							// Mostrar a mensagem
+							document.getElementById("mensagemSucesso").style.display = "block";
 							form.reset(); // Limpa o formulário
 						} else {
-							alert("Erro ao enviar. Tente novamente.");
+							alert("Ocorreu um erro. Por favor, tente novamente.");
 						}
 					})
-					.catch(() => alert("Erro de rede. Verifique sua ligação."));
+					.catch(error => {
+						alert("Erro de rede. Tente mais tarde.");
+						console.error("Erro:", error);
+					});
 			});
 
-			function fecharPopup() {
-				document.getElementById("popup").style.display = "none";
-			}
+			// Botão para fechar o modal
+			document.getElementById("fecharModal").addEventListener("click", function () {
+				document.getElementById("modalSucesso").style.display = "none";
+			});
 		</script>
+
 
 </body>
 
