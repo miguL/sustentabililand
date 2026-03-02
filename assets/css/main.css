@@ -4313,17 +4313,21 @@ body.is-preload #banner p {
 
 }
 
-#googlemap .inner {
-  position: relative;
-  z-index: 2;
+#banner h1 {
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
-#googlemap #mapa2 {
-  position: relative;
-  z-index: 3;
+#banner p {
+    line-height: 1.6;
 }
 
-#googlemap::before,
-#googlemap::after {
-  display: none !important;
+.button.primary {
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.button.primary:hover {
+    transform: translateY(-2px);
 }
