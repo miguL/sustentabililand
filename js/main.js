@@ -55,6 +55,16 @@
       btn.disabled = true; btn.textContent = T.envio;
     });
   }
+  // Mapa: só carrega o Google Maps depois de um clique (sem cookies antes disso)
+  var mapa = document.getElementById('mapa'), mapaBtn = document.getElementById('mapa-btn');
+  if (mapa && mapaBtn) {
+    mapaBtn.addEventListener('click', function () {
+      var i = document.createElement('iframe');
+      i.src = mapa.getAttribute('data-src'); i.title = mapa.getAttribute('data-title');
+      i.loading = 'lazy'; i.allowFullscreen = true; i.referrerPolicy = 'no-referrer-when-downgrade';
+      mapa.innerHTML = ''; mapa.appendChild(i);
+    });
+  }
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });

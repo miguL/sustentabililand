@@ -25,9 +25,7 @@
 <link rel="apple-touch-icon" href="img/favicon.png">
 <meta property="og:locale" content="pt_PT">
 <meta property="og:locale:alternate" content="en_GB">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">
 {
@@ -111,6 +109,14 @@
         "@type": "Answer",
         "text": "Sim. Instalamos solar térmico e fotovoltaico, bombas de calor e sistemas de águas quentes sanitárias, e podemos integrá-los com o ar condicionado."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Com que marcas trabalham?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Somos instaladores multimarca. Trabalhamos sobretudo com Samsung e Hisense, mas instalamos e damos assistência a outras marcas, de acordo com a preferência e o orçamento do cliente."
+      }
     }
   ]
 }
@@ -182,7 +188,7 @@
           <svg viewBox="0 0 24 24"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1 19.1 4.9"/><path d="m9 3 3 3 3-3M9 21l3-3 3 3M3 9l3 3-3 3M21 9l-3 3 3 3"/></svg>
         </div>
         <h3>Ar condicionado</h3>
-        <p>Sistemas de mural, multi-split e de conduta, para uma divisão ou para a casa toda. Arrefecimento e aquecimento com baixo consumo.</p>
+        <p>Sistemas de mural, multi-split e de conduta, para uma divisão ou para a casa toda. Samsung, Hisense e outras marcas.</p>
       </article>
 
       <article class="card service">
@@ -224,6 +230,9 @@
         <h3>Canalização e eletricidade</h3>
         <p>Tratamos também das instalações de apoio, para que não tenha de coordenar várias empresas na mesma obra.</p>
       </article>
+    </div>
+    <div class="brands">
+      <p><strong>Instalador multimarca.</strong> Trabalhamos sobretudo com equipamentos <strong>Samsung</strong> e <strong>Hisense</strong>, e instalamos também outras marcas à escolha do cliente.</p>
     </div>
   </div>
 </section>
@@ -343,8 +352,15 @@
         <li>Loulé</li><li>Almancil</li><li>Quarteira</li><li>Vilamoura</li><li>Faro</li><li>Olhão</li><li>Albufeira</li><li>São Brás de Alportel</li><li>Tavira</li>
       </ul>
     </div>
-    <div class="map">
-      <iframe title="Localização da Sustentabililand na Franqueada, Loulé" src="https://www.google.com/maps?q=37.10968937523983,-8.04941110126732&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    <div class="map" id="mapa" data-src="https://www.google.com/maps?q=37.10968937523983,-8.04941110126732&amp;z=14&amp;output=embed" data-title="Localização da Sustentabililand na Franqueada, Loulé">
+      <div class="map__ph">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <strong>Sustentabililand, Lda</strong>
+        <span>Sítio da Franqueada, Armazém B Dtº · 8100-302 Loulé</span>
+        <button type="button" class="btn btn--primary" id="mapa-btn">Mostrar mapa</button>
+        <a href="https://www.google.com/maps?q=37.10968937523983,-8.04941110126732" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        <small>O mapa é carregado a partir do Google Maps, que pode usar cookies.</small>
+      </div>
     </div>
   </div>
 </section>
@@ -381,6 +397,10 @@
       <details class="faq__item">
         <summary>Também instalam painéis solares e bombas de calor?</summary>
         <p>Sim. Instalamos solar térmico e fotovoltaico, bombas de calor e sistemas de águas quentes sanitárias, e podemos integrá-los com o ar condicionado.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Com que marcas trabalham?</summary>
+        <p>Somos instaladores multimarca. Trabalhamos sobretudo com Samsung e Hisense, mas instalamos e damos assistência a outras marcas, de acordo com a preferência e o orçamento do cliente.</p>
       </details>
     </div>
   </div>
@@ -462,7 +482,7 @@
         <textarea id="f-msg" name="Mensagem" rows="4" maxlength="2000" placeholder="Conte-nos um pouco sobre o espaço e o que precisa."></textarea>
       </div>
       <button type="submit" class="btn btn--primary btn--lg btn--block">Enviar pedido</button>
-      <p class="form__note">Campos com * são obrigatórios. Usamos os seus dados apenas para responder ao seu pedido.</p>
+      <p class="form__note">Campos com * são obrigatórios. Usamos os seus dados apenas para responder ao seu pedido. Veja a <a href="privacidade.html">política de privacidade</a>.</p>
     </form>
   </div>
 </section>
@@ -482,9 +502,12 @@
       <a href="https://www.facebook.com/sustentabililand/" target="_blank" rel="noopener">Facebook</a>
     </div>
   </div>
+  <div class="container footer__ral">
+    <p><strong>Resolução alternativa de litígios de consumo.</strong> Em caso de litígio, o consumidor pode recorrer ao CIMAAL, Centro de Informação, Mediação e Arbitragem de Conflitos de Consumo do Algarve: <a href="https://www.consumoalgarve.pt" target="_blank" rel="noopener">www.consumoalgarve.pt</a>. Mais informações no <a href="https://www.consumidor.gov.pt" target="_blank" rel="noopener">Portal do Consumidor</a>.</p>
+  </div>
   <div class="container footer__legal">
     <span>© <span id="ano">2026</span> Sustentabililand, Lda. Todos os direitos reservados.</span>
-    <span class="footer__legal-links"><a href="en/" hreflang="en" lang="en">English</a><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a></span>
+    <span class="footer__legal-links"><a href="en/" hreflang="en" lang="en">English</a><a href="privacidade.html">Informação legal e privacidade</a><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a></span>
   </div>
 </footer>
 

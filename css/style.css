@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("../fonts/plus-jakarta-sans.woff2") format("woff2");
+}
+
 :root {
   --navy: #14286b;
   --navy-2: #0c1a4a;
@@ -302,3 +310,38 @@ p { margin: 0 0 1em; }
   .wafab { right: 16px; bottom: 16px; padding: 14px; }
   .wafab span { display: none; }
 }
+
+/* Marcas */
+.brands { margin-top: 20px; padding: 18px 24px; border-radius: var(--radius); background: var(--sky-soft); color: var(--navy); }
+.brands p { margin: 0; }
+
+/* Mapa com clique */
+.map { position: relative; background: linear-gradient(135deg, var(--sky-soft), #e9edfb); }
+.map__ph { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 24px; text-align: center; color: var(--navy); }
+.map__ph svg { width: 44px; height: 44px; fill: none; stroke: var(--blue); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.map__ph span { color: var(--muted); font-size: .95rem; }
+.map__ph .btn { margin-top: 8px; }
+.map__ph a { font-size: .9rem; font-weight: 600; }
+.map__ph small { color: var(--muted); font-size: .78rem; max-width: 34ch; }
+
+/* Rodapé legal */
+.footer__ral { padding-top: 20px; font-size: .82rem; color: rgba(255, 255, 255, .6); }
+.footer__ral p { margin: 0; max-width: 90ch; }
+.footer__ral strong { color: rgba(255, 255, 255, .85); }
+.footer__ral a, .form__note a { text-decoration: underline; }
+.form__note a { color: var(--blue); }
+
+/* Página legal */
+.legal { padding: 56px 0 80px; }
+.legal .container { max-width: 800px; }
+.legal h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); color: var(--navy); font-weight: 800; }
+.legal h2 { font-size: 1.3rem; margin-top: 2em; }
+.legal dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 20px; margin: 0 0 1em; }
+.legal dt { font-weight: 700; color: var(--navy); }
+.legal dd { margin: 0; }
+.legal li { margin-bottom: .4em; }
+.legal mark { background: #fff1c2; padding: .05em .35em; border-radius: 4px; }
+.legal__draft { padding: 14px 18px; border-radius: 12px; background: #fff7e0; border: 1px solid #f1d98a; font-size: .92rem; }
+@media (max-width: 640px) { .legal dl { grid-template-columns: 1fr; gap: 0; } .legal dd { margin-bottom: 10px; } }
+.legal__lang { font-size: .8rem; font-weight: 800; letter-spacing: .06em; border: 1.5px solid var(--line); border-radius: 999px; padding: .35em .75em; text-decoration: none; color: var(--ink); }
+@media (min-width: 641px) { .footer__legal { padding-right: 170px; } }

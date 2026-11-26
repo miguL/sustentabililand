@@ -24,9 +24,7 @@
 <link rel="apple-touch-icon" href="../img/favicon.png">
 <meta property="og:locale" content="en_GB">
 <meta property="og:locale:alternate" content="pt_PT">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="../fonts/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../css/style.css">
 <script type="application/ld+json">
 {
@@ -110,6 +108,14 @@
         "@type": "Answer",
         "text": "Yes. We install solar thermal and photovoltaic systems, heat pumps and domestic hot water systems, and can integrate them with your air conditioning."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Which brands do you work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We are a multi-brand installer. We mainly work with Samsung and Hisense, but we also install and service other brands, depending on the client's preference and budget."
+      }
     }
   ]
 }
@@ -181,7 +187,7 @@
           <svg viewBox="0 0 24 24"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1 19.1 4.9"/><path d="m9 3 3 3 3-3M9 21l3-3 3 3M3 9l3 3-3 3M21 9l-3 3 3 3"/></svg>
         </div>
         <h3>Air conditioning</h3>
-        <p>Wall-mounted, multi-split and ducted systems, for a single room or the whole house. Efficient cooling and heating.</p>
+        <p>Wall-mounted, multi-split and ducted systems, for a single room or the whole house. Samsung, Hisense and other brands.</p>
       </article>
 
       <article class="card service">
@@ -223,6 +229,9 @@
         <h3>Plumbing and electrics</h3>
         <p>We also handle the supporting installations, so you don't have to coordinate several companies on one job.</p>
       </article>
+    </div>
+    <div class="brands">
+      <p><strong>Multi-brand installer.</strong> We mainly work with <strong>Samsung</strong> and <strong>Hisense</strong> equipment, and also install other brands of the client's choice.</p>
     </div>
   </div>
 </section>
@@ -342,8 +351,15 @@
         <li>Loulé</li><li>Almancil</li><li>Quarteira</li><li>Vilamoura</li><li>Faro</li><li>Olhão</li><li>Albufeira</li><li>São Brás de Alportel</li><li>Tavira</li>
       </ul>
     </div>
-    <div class="map">
-      <iframe title="Sustentabililand location in Franqueada, Loulé" src="https://www.google.com/maps?q=37.10968937523983,-8.04941110126732&z=14&hl=en&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    <div class="map" id="mapa" data-src="https://www.google.com/maps?q=37.10968937523983,-8.04941110126732&amp;z=14&amp;hl=en&amp;output=embed" data-title="Sustentabililand location in Franqueada, Loulé">
+      <div class="map__ph">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <strong>Sustentabililand, Lda</strong>
+        <span>Sítio da Franqueada, Armazém B Dtº · 8100-302 Loulé</span>
+        <button type="button" class="btn btn--primary" id="mapa-btn">Show map</button>
+        <a href="https://www.google.com/maps?q=37.10968937523983,-8.04941110126732" target="_blank" rel="noopener">Open in Google Maps</a>
+        <small>The map is loaded from Google Maps, which may use cookies.</small>
+      </div>
     </div>
   </div>
 </section>
@@ -380,6 +396,10 @@
       <details class="faq__item">
         <summary>Do you also install solar panels and heat pumps?</summary>
         <p>Yes. We install solar thermal and photovoltaic systems, heat pumps and domestic hot water systems, and can integrate them with your air conditioning.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Which brands do you work with?</summary>
+        <p>We are a multi-brand installer. We mainly work with Samsung and Hisense, but we also install and service other brands, depending on the client's preference and budget.</p>
       </details>
     </div>
   </div>
@@ -461,7 +481,7 @@
         <textarea id="f-msg" name="Mensagem" rows="4" maxlength="2000" placeholder="Tell us a little about the space and what you need."></textarea>
       </div>
       <button type="submit" class="btn btn--primary btn--lg btn--block">Send request</button>
-      <p class="form__note">Fields marked * are required. We only use your details to reply to your request.</p>
+      <p class="form__note">Fields marked * are required. We only use your details to reply to your request. See our <a href="privacy.html">privacy policy</a>.</p>
     </form>
   </div>
 </section>
@@ -481,9 +501,12 @@
       <a href="https://www.facebook.com/sustentabililand/" target="_blank" rel="noopener">Facebook</a>
     </div>
   </div>
+  <div class="container footer__ral">
+    <p><strong>Alternative dispute resolution for consumers.</strong> In the event of a dispute, consumers may contact CIMAAL, the Algarve Consumer Dispute Information, Mediation and Arbitration Centre: <a href="https://www.consumoalgarve.pt" target="_blank" rel="noopener">www.consumoalgarve.pt</a>. More information on the <a href="https://www.consumidor.gov.pt" target="_blank" rel="noopener">Consumer Portal</a>.</p>
+  </div>
   <div class="container footer__legal">
     <span>© <span id="ano">2026</span> Sustentabililand, Lda. All rights reserved.</span>
-    <span class="footer__legal-links"><a href="../" hreflang="pt-PT" lang="pt-PT">Português</a><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Complaints Book (Livro de Reclamações)</a></span>
+    <span class="footer__legal-links"><a href="../" hreflang="pt-PT" lang="pt-PT">Português</a><a href="privacy.html">Legal information and privacy</a><a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Complaints Book (Livro de Reclamações)</a></span>
   </div>
 </footer>
 
