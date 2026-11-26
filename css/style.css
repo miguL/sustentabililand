@@ -67,7 +67,7 @@ p { margin: 0 0 1em; }
 .nav a:not(.btn):hover { background: var(--tint); color: var(--blue); }
 .nav__cta { margin-left: 8px; }
 .topbar__phone { display: none; }
-.topbar__phone svg, .contact__list svg, .callfab svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.topbar__phone svg, .contact__list svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .burger { display: none; }
 
 /* Hero */
@@ -196,7 +196,6 @@ p { margin: 0 0 1em; }
 .footer__links { display: flex; flex-direction: column; gap: 6px; }
 .footer__legal { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 20px; font-size: .85rem; }
 
-.callfab { display: none; }
 
 /* Reveal on scroll */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
@@ -256,11 +255,6 @@ p { margin: 0 0 1em; }
   .form__row { grid-template-columns: 1fr; }
   .stats { margin: -28px 10px 0; }
   .footer { padding-bottom: 96px; }
-  .callfab {
-    display: inline-flex; align-items: center; gap: 8px; position: fixed; right: 16px; bottom: 16px; z-index: 40;
-    background: var(--warm); color: #fff; font-weight: 700; text-decoration: none; padding: 14px 20px; border-radius: 999px;
-    box-shadow: 0 12px 28px -10px rgba(242, 122, 26, .8);
-  }
 }
 
 /* Idioma */
@@ -305,6 +299,6 @@ p { margin: 0 0 1em; }
 .wafab svg { width: 26px; height: 26px; fill: currentColor; }
 .contact__list svg.ico-wa { fill: #1fa855; stroke: none; padding: 10px; }
 @media (max-width: 640px) {
-  .wafab { right: 16px; bottom: 80px; padding: 13px; }
+  .wafab { right: 16px; bottom: 16px; padding: 14px; }
   .wafab span { display: none; }
 }
