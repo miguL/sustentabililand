@@ -294,3 +294,17 @@ p { margin: 0 0 1em; }
 @media (max-width: 1080px) {
   .nav a.nav__lang { align-self: flex-start; margin: 14px 0 0; border-bottom: 1.5px solid var(--line); padding: .4em 1em; border-radius: 999px; }
 }
+
+/* WhatsApp */
+.wafab {
+  position: fixed; right: 24px; bottom: 24px; z-index: 41; display: inline-flex; align-items: center; gap: 10px;
+  background: #25d366; color: #fff; font-weight: 700; text-decoration: none; padding: 14px 20px 14px 16px; border-radius: 999px;
+  box-shadow: 0 12px 28px -10px rgba(18, 140, 70, .8); transition: transform .15s ease, background .2s;
+}
+.wafab:hover { transform: translateY(-2px); background: #1ebe5b; }
+.wafab svg { width: 26px; height: 26px; fill: currentColor; }
+.contact__list svg.ico-wa { fill: #1fa855; stroke: none; padding: 10px; }
+@media (max-width: 640px) {
+  .wafab { right: 16px; bottom: 80px; padding: 13px; }
+  .wafab span { display: none; }
+}
